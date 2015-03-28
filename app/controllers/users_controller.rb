@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    render json: {message: 'Resource not found'}
   end
 
   def show

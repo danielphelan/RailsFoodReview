@@ -1,7 +1,17 @@
-<% content_for :title do %>About<% end %>
-<h3>About the Website</h3>
-<p>
-This web application was created with
-<%= link_to('Rails Composer', 'http://railsapps.github.io/rails-composer/') %>
-from the <%= link_to('RailsApps project', 'http://railsapps.github.io/') %>.
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="box">
+                <div class="box-icon">
+                    <span class="fa fa-4x fa-cutlery"></span>
+                </div>
+                <div class="info">
+                    <h4 class="text-center">Get In My Belly</h4>
+                    <p>This website was created by Daniel Phelan (20053241) and Gareth Lacey(////////) as part of our Dynamic Web Development Project. It is a restaurant review application.</p>
+                    <%= button_to "Sign Up", new_user_registration_path, 
+      :class => "btn btn-primary", :method => :get %>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
