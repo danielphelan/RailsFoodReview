@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328174301) do
+ActiveRecord::Schema.define(version: 20150329010507) do
+
+  create_table "reviews", force: true do |t|
+    t.integer  "user_id"
+    t.string   "restaurant"
+    t.string   "title"
+    t.string   "date"
+    t.string   "loc_lat"
+    t.string   "loc_long"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["date"], name: "index_reviews_on_date"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

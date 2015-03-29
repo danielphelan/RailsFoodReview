@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-8">
+    <ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <div class="review-body">
+          <div class="row">
+        
+
+            <div class="col-md-11">
+
+                <div class="review-title">
+                  <%= review.title %>
+                </div>
+                <div class="review-loc-name">
+                  <%= review.restaurant %>
+                </div>
+                <div class="review-time">
+                  <span><%= review.date %></span>
+                  <span style="float: right;">
+                  
+                    <%= link_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </span>
+                </div>
+              </div>
+        
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
