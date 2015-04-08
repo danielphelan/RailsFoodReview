@@ -12,19 +12,24 @@
   <% end %>
 
   <%= f.hidden_field :user_id, value: current_user.id %>
-
+  <div class="field form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  
   <div class="field form-group">
     <%= f.label :restaurant %><br>
     <%= f.text_field :restaurant, class: 'form-control' %>
   </div>
   <div class="field form-group">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.label :location , "City" %><br>
+    <%= f.text_field :location, class: 'form-control' %>
   </div>
+  
 
   <div class="field form-group">
-    <%= f.label :date, "Date & Time" %>
-    <div class='input-group date' id='datetimepicker1'>
+    <%= f.label :date, "Date" %>
+    <div class='input-group date' data-provide='datepicker'>
       <%= f.text_field :date, class: 'form-control' %>
       <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
     </div>

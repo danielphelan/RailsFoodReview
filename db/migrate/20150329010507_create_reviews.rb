@@ -3,10 +3,11 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.integer :user_id
       t.string :restaurant
+      t.string :location
       t.string :title
       t.string :date
-      t.string :loc_lat
-      t.string :loc_long
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end

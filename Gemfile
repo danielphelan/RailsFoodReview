@@ -14,6 +14,10 @@ gem 'devise'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'rails-api'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'jquery-turbolinks'
+gem 'bootstrap-datepicker-rails'
 
 group :development do
   gem 'better_errors'

@@ -5,7 +5,13 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
-    respond_with(@reviews)
+    
+    @hash = Gmaps4rails.build_markers(@reviews) do |review, marker|
+      marker.lat review.latitude
+      marker.lng review.longitude
+      marker.infowindow review.title + " - " + review.restaurant
+      @user = User.find(review.user_id)
+end
   end
 
   def show
@@ -42,6 +48,6 @@ class ReviewsController < ApplicationController
     end
 
     def review_params
-      params.require(:review).permit(:user_id,:restaurant, :title, :date)
+      params.require(:review).permit(:user_id,:restaurant, :location,:title, :date)
     end
 end

@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 20150329010507) do
   create_table "reviews", force: true do |t|
     t.integer  "user_id"
     t.string   "restaurant"
+    t.string    "location"
     t.string   "title"
     t.string   "date"
-    t.string   "loc_lat"
-    t.string   "loc_long"
+    t.float   "latitude"
+    t.float   "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
