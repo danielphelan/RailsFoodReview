@@ -16,6 +16,7 @@ Rails.application.routes.draw do
         devise_scope :user do 
           post 'users/log_in',    to: 'sessions#create'
           get 'users/',    to: 'users#index'
+          get 'restreview/:id',    to: 'restaurants#rest_reviews'
           
         end
         resources :users
