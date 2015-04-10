@@ -19,13 +19,14 @@
   <%= @restaurant.latitude %>
   <%= @restaurant.longitude %>
 </p>
- <strong>Number of Reviews:</strong><%= @restaurant.reviews.count %><br></p>
+ <strong>Number of Reviews:</strong><%= @restaurant.reviews.count %><br>
+</p>
+<h2> All Reviews </h2>
 <% for review in @reviews %>
   <%=h link_to review.title , review_path(review) %>
-<p>
+  <br>
   <% end %>
-
-</p>
+<br>
 
 <%= link_to 'Back', reviews_path %>
 </div>
