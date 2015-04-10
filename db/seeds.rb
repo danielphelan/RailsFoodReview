@@ -5,5 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+ user = User.new(
+      :name                  => 'ADMIN',
+      :email                 => "admin@gimb.com",
+      :password              => "getinmybelly!",
+      :password_confirmation => "getinmybelly!",
+      :admin                 => "true"
+  )
+  user.skip_confirmation!
+  user.save!
+# User.create! (name: 'ADMIN', email: 'admin@gimb.com', password: 'getinmybelly!', password_confirmation:'getinmybelly!', admin: 'true',)

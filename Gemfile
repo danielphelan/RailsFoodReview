@@ -18,6 +18,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap-datepicker-rails'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :development do
   gem 'better_errors'

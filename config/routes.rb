@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :restaurants
   root to: 'visitors#index'
   devise_for :users
