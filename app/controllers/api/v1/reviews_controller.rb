@@ -24,6 +24,7 @@ class Api::V1::ReviewsController < ApplicationController
             private
 
                 def user_params
-                    params.require(:review).permit(:title, :restaurant, :date)
+                    params.require(:review).permit(:user_id,:restaurant, :title, :date)
+
                 end
             end

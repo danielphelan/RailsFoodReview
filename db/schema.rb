@@ -11,18 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329010507) do
+ActiveRecord::Schema.define(version: 20150410201158) do
+
+  create_table "restaurants", force: true do |t|
+    t.string   "name"
+    t.string   "food"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "reviews", force: true do |t|
     t.integer  "user_id"
-    t.string   "restaurant"
-    t.string    "location"
+    t.string   "restaurant_id"
+    t.string   "location"
     t.string   "title"
     t.string   "date"
-    t.float   "latitude"
-    t.float   "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "details"
   end
 
   add_index "reviews", ["date"], name: "index_reviews_on_date"
