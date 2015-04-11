@@ -16,6 +16,8 @@ end
   end
 
   def show
+    @review = Review.find(params[:id])
+    @user = User.find(@review.user_id)
     respond_with(@review)
   end
 
@@ -40,6 +42,7 @@ end
   end
 
   def destroy
+    @review = Review.find(params[:id])
     @review.destroy
     respond_with(@review)
   end
