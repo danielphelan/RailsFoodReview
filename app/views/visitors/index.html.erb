@@ -1,2 +1,17 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="box">
+                <div class="box-icon">
+                    <span class="fa fa-4x fa-cutlery"></span>
+                </div>
+                <div class="info">
+                    <h4 class="text-center">Get In My Belly</h4>
+                    <p>This website was created by Daniel Phelan (20053241) and Gareth Lacey(////////) as part of our Dynamic Web Development Project. It is a restaurant review application.</p>
+                    <%= button_to "Sign Up", new_user_registration_path, 
+      :class => "btn btn-primary", :method => :get %>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
