@@ -10,7 +10,6 @@ class Api::V1::RestaurantsController < ApplicationController
                 @restaurant = Restaurant.find(params[:id])
                 @reviews = @restaurant.reviews
                 respond_with (@restaurant)
-                respond_with (@reviews)
             end
             def rest_reviews
                 @restaurant = Restaurant.find(params[:id])
