@@ -32,8 +32,14 @@ end
 
   def create
     @review = Review.new(review_params)
-    flash[:notice] = 'Review was successfully created.' if @review.save
+    
+    if @review.save
+      flash[:notice] = 'Review was successfully created.' 
     respond_with(@review)
+    else 
+          flash.now[:error] = 'Please Complete the form'
+          render 'new'
+        end
   end
 
   def update
@@ -53,6 +59,6 @@ end
     end
 
     def review_params
-      params.require(:review).permit(:user_id,:restaurant_id, :details, :location,:title, :date)
+      params.require(:review).permit(:user_id,:restaurant_id,:comeback, :details,:title, :date)
     end
 end

@@ -7,9 +7,11 @@
                 </div>
                 <div class="info">
                     <h4 class="text-center">Get In My Belly</h4>
-                    <p>This website was created by Daniel Phelan (20053241) and Gareth Lacey(////////) as part of our Dynamic Web Development Project. It is a restaurant review application.</p>
-                    <%= button_to "Sign Up", new_user_registration_path, 
-      :class => "btn btn-primary", :method => :get %>
+                    <p>This website was created by Daniel Phelan (20053241) and Gareth Lacey(20053783) as part of our Dynamic Web Development Project. It is a restaurant review application.</p>
+                    <% if !user_signed_in? %>
+                    <%= button_to "Sign Up", new_user_registration_path, :class => "btn btn-primary", :method => :get %>
+                   <% end %>
+
                 </div>
             </div>
         </div>

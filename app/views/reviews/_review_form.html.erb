@@ -19,13 +19,17 @@
   </div>
   <div class="field form-group">
   <%= f.label :restaurant , "Select A restaurant" %><br>
-  <%= f.collection_select(:restaurant_id, @restaurants.all, :id, :name, {:class=>'custom-class'} ) %>
+  <%= f.collection_select(:restaurant_id, @restaurants || [], :id, :name, {include_blank: 'Please Select'},{:class=>'custom-class'} ) %>
 </div>
   <div class="field form-group">
    <%= f.label :details, "Review" %> <br>
     <%= f.text_area :details, placeholder: "How was the restaurant?" %>
   </div>
-  
+
+<div class="field form-group">
+   <%= f.label :comeback, "Would you return again?" %> <br>
+ <%= f.select(:comeback, options_for_select([['Yes', 'Yes'], ['No', 'No']]),class: "dropdown-menu") %>
+   </div>
 
   <div class="field form-group">
     <%= f.label :date, "Date" %>
