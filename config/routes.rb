@@ -18,6 +18,7 @@ Rails.application.routes.draw do
           post 'users/log_in',    to: 'sessions#create'
           get 'users/',    to: 'users#index'
           get 'restreview/:id',    to: 'restaurants#rest_reviews'
+          post 'users/register', to: 'users#create'
           
         end
         resources :users

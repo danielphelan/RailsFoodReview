@@ -1,7 +1,7 @@
   review ||= @review
 
   json.title review['title']
-  json.restaurant review['restaurant']
+  json.restaurant review['restaurant_id']
  json.date review['date']
  
 

@@ -1,6 +1,6 @@
 class Restaurant < ActiveRecord::Base
   geocoded_by :location
-  after_validation :geocode
+  before_save :geocode
   has_many :reviews, dependent: :destroy
   validates :address, presence: true
   validates :name, presence: true, uniqueness: { case_sensitive: false }

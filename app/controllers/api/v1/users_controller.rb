@@ -13,6 +13,7 @@ class Api::V1::UsersController < Devise::RegistrationsController
 
             def create
                 @user = User.new(user_params)
+                @user.skip_confirmation!
                 if @user.save
                     respond_with @user
                 else

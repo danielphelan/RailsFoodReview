@@ -12,10 +12,11 @@ class Api::V1::ReviewsController < ApplicationController
             end
 
             def create
-                @review = Review.new(user_params)
+                @review = Review.new(review_params)
                 if @review.save
                     respond_with @review
                 else
+
                 end
               end
                
@@ -23,8 +24,8 @@ class Api::V1::ReviewsController < ApplicationController
 
             private
 
-                def user_params
-                    params.require(:review).permit(:user_id,:restaurant, :title, :date)
+                def review_params
+                    params.require(:review).permit(:user_id, :restaurant_id, :comeback,:title,:details, :date)
 
                 end
             end
