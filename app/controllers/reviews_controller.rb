@@ -5,7 +5,8 @@ class ReviewsController < ApplicationController
   respond_to :html
 
   def index
-    @reviews = Review.all
+    @reviews = Review.all.paginate(page: params[:page], per_page: 5)
+
     
     @hash = Gmaps4rails.build_markers(@reviews) do |review, marker|
       marker.lat review.restaurant.latitude

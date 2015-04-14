@@ -18,6 +18,8 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap-datepicker-rails'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :development do

@@ -3,6 +3,7 @@
 
 <div class="row">
   <div class="col-md-4">
+     <%= will_paginate @reviews, renderer: BootstrapPagination::Rails %>
     <ul class="event-list">
     <% @reviews.each do |review| %>
        
@@ -26,10 +27,12 @@
           </li>
         <% end %>
         </ul>
+
   </div>
 
   <div class = "col-md-7">
     <div class='col-md-12'>
+      <br>
     <div id="map" style='height: 400px;'></div>
     </div>
   </div>
