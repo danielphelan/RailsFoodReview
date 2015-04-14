@@ -4,19 +4,18 @@
   <div class="col-md-10 col-md-offset-3">
     <div class="row">
       <div class="col-md-10">
-        <h4><strong><%= @review.title %> at <%= @review.restaurant.name %></strong></h4>
+        <h3><strong><%= @review.title %> at <%= @review.restaurant.name %><br><%= @review.date %></strong></h3>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2">
-        <a href="#" class="thumbnail">
-            <img src="http://placehold.it/260x180" alt="">
-        </a>
-      </div>
       <div class="col-md-5">      
-        <p>
-         <%= @review.details %>
-        </p>
+        <h4><u>
+          Review
+        </u></h4>
+        <h5>
+         <%= @review.details %><br>
+         
+        </h5>
         
       </div>
     </div>
@@ -25,9 +24,9 @@
         <p></p>
         <p>
           <i class="icon-user"></i> by <%= @review.user.name %>
-          | <i class="icon-calendar"></i> <%= @review.date %>
           <% if current_user == @review.user %>
           |<%= link_to 'Edit', edit_review_path(@review) %> 
+          | <%= link_to 'Delete', @review, method: :delete, data: { confirm: 'Are you sure?' } %>
            | <%= link_to 'Back', reviews_path %>
           <% end %>
         </p>

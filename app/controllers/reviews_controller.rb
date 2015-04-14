@@ -29,6 +29,15 @@ end
   end
 
   def edit
+    @restaurants = Restaurant.all 
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find params[:id]
+    @review.update(review_params)
+    flash[:success] = "Updated the workout"
+    redirect_to reviews_path
   end
 
   def create
@@ -39,14 +48,15 @@ end
     respond_with(@review)
     else 
           flash.now[:error] = 'Please Complete the form'
+           @restaurants = Restaurant.all 
           render 'new'
-        end
+      end
   end
 
-  def update
-    flash[:notice] = 'Review was successfully updated.' if @review.update(review_params)
-    respond_with(@review)
-  end
+  # def update
+  #   flash[:notice] = 'Review was successfully updated.' if @review.update(review_params)
+  #   respond_with(@review)
+  # end
 
   def destroy
     @review = Review.find(params[:id])
