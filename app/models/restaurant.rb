@@ -7,4 +7,9 @@ class Restaurant < ActiveRecord::Base
    def location
     [name, address, 'Ireland'].compact.join(', ')
   end
+
+   def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+     where("name like ?", "%#{query}%") 
+    end
 end
