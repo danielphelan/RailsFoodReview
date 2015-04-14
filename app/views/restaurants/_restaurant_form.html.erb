@@ -17,9 +17,9 @@
   </div>
   
   <div class="field form-group">
-    <%= f.label :food %><br>
-    <%= f.text_field :food, class: 'form-control' %>
-  </div>
+   <%= f.label :food, "Food Type" %> <br>
+ <%= f.select(:food, options_for_select([['Bar Food', 'Bar Food'],['Fast Food', 'Fast Food'],['Italian Food', 'Italian Food'],['Sea Food', 'Sea Food'],['Chinese Food', 'Chinese Food'], ['Indian Food', 'Indian Food']]),class: "dropdown-menu") %>
+   </div>
   <div class="field form-group">
     <%= f.label :address , "Address" %><br>
     <%= f.text_field :address, class: 'form-control' %>
