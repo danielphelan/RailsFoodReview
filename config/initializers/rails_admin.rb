@@ -8,6 +8,8 @@ RailsAdmin.config do |config|
     end
   end
 end
+
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -34,6 +36,7 @@ end
     edit
     delete
     show_in_app
+
 
     ## With an audit adapter, you can add:
     # history_index
