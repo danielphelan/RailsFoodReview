@@ -9,11 +9,20 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <% if notice %>
+    <div id = "notice_wrapper">
+      <p class = "notice"><%= notice %> </p>
+    </div>
+    <%elsif alert %>
+    <div id = "notice_wrapper">
+      <p class = "alert"> <%= alert %> </p>
+    </div>
+    <% end %>
+      
     <header>
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
   </body>
