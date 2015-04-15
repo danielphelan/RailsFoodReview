@@ -11,6 +11,13 @@ class Api::V1::RestaurantsController < ApplicationController
                 @reviews = @restaurant.reviews
                 respond_with (@restaurant)
             end
+             def destroy
+                @restaurant = Restaurant.find(params[:id])
+                @restaurant.destroy
+                render json:{ message: 'Restaurant Deleted' }
+               
+            end
+
             def rest_reviews
                 @restaurant = Restaurant.find(params[:id])
                 @reviews = @restaurant.reviews
