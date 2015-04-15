@@ -7,6 +7,11 @@ class RestaurantsController < ApplicationController
   def index
     if params[:search]
       @restaurants = Restaurant.search(params[:search]).order("created_at DESC").paginate(page: params[:page], per_page: 5)
+      @hash = Gmaps4rails.build_markers(@restaurants) do |restaurant, marker|
+      marker.lat restaurant.latitude
+      marker.lng restaurant.longitude
+      marker.infowindow restaurant.name
+    end
     else
     @restaurants = Restaurant.all.paginate(page: params[:page], per_page: 5)
     @hash = Gmaps4rails.build_markers(@restaurants) do |restaurant, marker|
