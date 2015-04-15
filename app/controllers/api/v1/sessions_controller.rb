@@ -9,11 +9,11 @@ class Api::V1::SessionsController < Devise::SessionsController
       if @resource.valid_password?(params[:user][:password])
         respond_with @resource
       else
-        render :status => 404, json:{ message: 'Incorrect password' }
+        render :status => 404, json:{ message: 'Incorrect password entered- try again' }
        
       end
     else
-      render :status => 404, json: { message: 'Not found' }
+      render :status => 404, json: { message: 'User does not exist- sign up' }
     end    
   end
 
