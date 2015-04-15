@@ -1,5 +1,6 @@
 class Api::V1::ReviewsController < ApplicationController
-   respond_to :json
+            respond_to :json
+            before_action :authenticate_user!
 
             def index
               @reviews = Review.all
@@ -9,6 +10,12 @@ class Api::V1::ReviewsController < ApplicationController
             def show
                 @review = Review.find(params[:id])
                 respond_with (@review)
+            end
+            def destroy
+
+                @review = Review.find(params[:id])
+                @review.destroy
+                render json:{ message: 'Review Deleted' }
             end
 
             def create
