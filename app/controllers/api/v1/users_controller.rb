@@ -17,7 +17,7 @@ class Api::V1::UsersController < Devise::RegistrationsController
                 if @user.save
                     respond_with @user
                 else
-                    render :status => 404, json:{ message: 'Account Already Used-Try Again' }
+                    render :status => 404, json:{ message: 'Account Already Used-Try Again'}
                 end
               end
                
@@ -26,6 +26,6 @@ class Api::V1::UsersController < Devise::RegistrationsController
             private
 
                 def user_params
-                    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+                    params.require(:user).permit(:name, :email, :password, :password_confirmation,:role)
                 end
             end
